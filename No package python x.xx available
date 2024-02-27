@@ -1,0 +1,48 @@
+How to install python version which is not availble on the deafult repo:
+Error:
+No package python x.xx available.
+Error: Nothing to do
+
+
+To install python version which we requiered on our os first we have to install pyenv and using it to install Python x.xx.xx:
+
+    Install pyenv:
+
+
+curl https://pyenv.run | bash
+
+Add pyenv to your shell's initialization file (e.g., .bashrc, .bash_profile, .zshrc):
+Open ~/.bashrc:
+vi ~/.bashrc
+
+Add the line to the end of the text file:
+
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+source ~/.bashrc
+
+Save it:
+:wq
+and run the following command:
+source ~/.bashrc
+
+After the above run the following line:
+
+
+sudo yum install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
+
+
+then install the python version 
+
+pyenv install x.xx.xx
+
+Set Python xx.xx for your project directory:
+
+pyenv global xx.xx.0
+
+Now you should have Python xx.xx installed and set as your active Python version. 
+
+Check the version now:
+
+python --version
